@@ -84,6 +84,7 @@ namespace Shop.Controllers
                 return NotFound(new { message = "Usuário ou senha inválidos" });
 
             var token = TokenService.GenerateToken(user);
+            user.Password = "";
             return new { user, token };
         }
 
