@@ -22,10 +22,10 @@ jobs:
         dotnet-version: '3.1.301'
         
     - name: Install dependencies
-      run: dotnet restore
+      run: dotnet restore ./Shop/
 
     - name: Build with dotnet
-      run: dotnet build --configuration Release --no-restore
+      run: dotnet build --configuration Release --no-restore ./Shop
 
     - name: dotnet publish
       run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
